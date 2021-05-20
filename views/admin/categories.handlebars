@@ -1,0 +1,68 @@
+
+	<!--==========================
+    INSIDE HERO SECTION Section
+============================-->
+	<section class="page-image page-image-about md-padding">
+		<h1 class="text-white text-center">Categories</h1>
+	</section>
+
+
+
+<div class="md-padding">
+	<div class="container">
+{{> admin}}
+		<div class="clearfix"></div>
+<div class="mb-5"></div>
+<div class="row">
+	<div class="col-md-4">
+	<form   method="POST" enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-md-10">
+							<div class="form-group">
+								<input class="form-control" name="name" type="text" placeholder="category name" required="required" data-validation-required-message="Please enter catogry.">
+								<p class="help-block text-danger"></p>
+							</div>
+						
+							
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-lg-12">
+							<div id="success"></div>
+							<button class="main-btn" type="submit" style="margin-left:0 ;">add catego</button>
+						</div>
+					</div>
+				</form>
+	</div>
+	<div class="col-md-8">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each categories}}
+				<tr>
+					<td>{{_id}}</td>
+					<td>{{name}}</td>
+					<td>
+						<form action="/admin/categories/{{_id}}?_method=DELETE" method="POST">
+							<input type="hidden" name="_method" value="DELETE" >
+							<button type="submit"  class="btn btn-danger">DELETE</button>
+						</form>
+					</td>
+				</tr>
+				
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+	</div>
+</div>
+	<!--==========================
+    THE TEAM
+============================-->
+
